@@ -8,11 +8,16 @@ window.addEventListener('load', function(){
     document.getElementById("boundary2").addEventListener("mouseenter", mouseEnter);
     document.getElementById("boundary3").addEventListener("mouseenter", mouseEnter);
     document.getElementById("boundary4").addEventListener("mouseenter", mouseEnter);
-
+    document.getElementById("start").addEventListener("mouseenter", mouseEnter2);
     function mouseEnter(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className += " youlose";}
     }
+    function mouseEnter2(){
+        for (var i=0; i<boundaries.length-1;i++){
+            document.getElementById("boundary"+i).className = "boundary";}
+    }
+    
     var lol= document.getElementById("game");
     console.log(lol);
 })
