@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
     document.getElementById("boundary2").addEventListener("mouseenter", mouseEnter);
     document.getElementById("boundary3").addEventListener("mouseenter", mouseEnter);
     document.getElementById("boundary4").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("start").addEventListener("mouseenter", mouseEnter3);
     document.getElementById("start").addEventListener("click", onClick);
     document.getElementById("end").addEventListener("mouseenter", mouseEnter2);
         
@@ -18,11 +19,13 @@ window.addEventListener('load', function(){
         document.getElementById("status").innerHTML= "You Lost"
         score=score-10;    
     }
-    function onClick(){
+    function mouseEnter3(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className = "boundary";}
         document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
-        console.log(score)
+    }
+    function onClick(){
+        score=0;
     }
     function mouseEnter2(){
         document.getElementById("status").innerHTML= "You Won"
