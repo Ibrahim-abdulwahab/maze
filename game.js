@@ -17,6 +17,7 @@ window.addEventListener('load', function(){
     function onClick(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className = "boundary";}
+        document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
     }
     
     var lol= document.getElementById("game");
