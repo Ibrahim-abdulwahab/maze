@@ -3,8 +3,15 @@ window.addEventListener('load', function(){
     for (var i =0 ; i< boundaries.length-1; i++){
         boundaries[i].setAttribute("id","boundary"+i);
     }
-    for (var i=0; i<boundaries.length-1;i++){
-        document.getElementById("boundary"+i).className += " youlose";
+    document.getElementById("boundary0").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("boundary1").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("boundary2").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("boundary3").addEventListener("mouseenter", mouseEnter);
+    document.getElementById("boundary4").addEventListener("mouseenter", mouseEnter);
+
+    function mouseEnter(){
+        for (var i=0; i<boundaries.length-1;i++){
+            document.getElementById("boundary"+i).className += " youlose";}
     }
     var lol= document.getElementById("game");
     console.log(lol);
