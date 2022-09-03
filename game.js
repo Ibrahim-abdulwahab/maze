@@ -12,6 +12,7 @@ window.addEventListener('load', function(){
     function mouseEnter(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className += " youlose";}
+        document.getElementById("status").innerHTML= "You Lost"
     }
     function mouseEnter2(){
         for (var i=0; i<boundaries.length-1;i++){
