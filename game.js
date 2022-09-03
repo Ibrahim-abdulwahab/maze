@@ -1,19 +1,11 @@
-function downloadJSAtOnload() {//since the script is in the head, 
-    //I need a way to access the elements after it.To do so I used this function.
-    var element = document.createElement("script");
-    element.src = "game.js";
-    document.body.appendChild(element);
-}
+window.addEventListener('load', function(){
+    var boundaries=document.getElementsByClassName("boundary");
+    for (var i =0 ; i< boundaries.length; i++){
+        boundaries[i].setAttribute("id","boundary"+i);
+    }
+    //document.getElementById("boundary0").className = "youlose";
+    
+    var lol= document.getElementById("game");
+    console.log(lol);
+})
 
-if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
-
-var boundaries=document.getElementsByClassName("boundary");
-for (var i =0 ; i< boundaries.length; i++){
-    boundaries[i].setAttribute("id","boundary"+i);
-}
-var element= document.getElementById("game");
-console.log(element);
