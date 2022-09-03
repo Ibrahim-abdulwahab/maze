@@ -4,37 +4,44 @@ window.addEventListener('load', function(){
         boundaries[i].setAttribute("id","boundary"+i);
     }
     var score=0;
+    var n=0;
     print=document.getElementsByClassName("boundary example")
-    document.getElementById("boundary0").addEventListener("mouseenter", mouseEnter);
-    document.getElementById("boundary1").addEventListener("mouseenter", mouseEnter);
-    document.getElementById("boundary2").addEventListener("mouseenter", mouseEnter);
-    document.getElementById("boundary3").addEventListener("mouseenter", mouseEnter);
-    document.getElementById("boundary4").addEventListener("mouseenter", mouseEnter);
-    document.getElementById("start").addEventListener("mouseenter", mouseEnter3);
+    document.getElementById("boundary0").addEventListener("mouseenter", losing);
+    document.getElementById("boundary1").addEventListener("mouseenter", losing);
+    document.getElementById("boundary2").addEventListener("mouseenter", losing);
+    document.getElementById("boundary3").addEventListener("mouseenter", losing);
+    document.getElementById("boundary4").addEventListener("mouseenter", losing);
+    document.getElementById("start").addEventListener("mouseenter", starting);
     document.getElementById("start").addEventListener("click", onClick);
-    document.getElementById("end").addEventListener("mouseenter", mouseEnter2);
-        
-    function mouseEnter(){
-        for (var i=0; i<boundaries.length-1;i++){
-            document.getElementById("boundary"+i).className += " youlose";}
-        document.getElementById("status").innerHTML= "You Lost"
-        score=score-10;
-        print[0].innerHTML=score;    
-    }
-    function mouseEnter3(){
+    document.getElementById("end").addEventListener("mouseenter", winning);
+
+    function starting(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className = "boundary";}
         document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
-        document.getElementById("game").addEventListener("mouseleave", mouseEnter);
+        document.getElementById("game").addEventListener("mouseleave", losing);
+        n=0;
     }
     function onClick(){
         score=0;
         print[0].innerHTML=score;
     }
-    function mouseEnter2(){
+    function losing(){
+        if (n==0){
+        for (var i=0; i<boundaries.length-1;i++){
+            document.getElementById("boundary"+i).className += " youlose";}
+        document.getElementById("status").innerHTML= "You Lost"
+        score=score-10;
+        print[0].innerHTML=score;
+        n=1;
+        }        
+    }
+    function winning(){
+        if (n==0){
         document.getElementById("status").innerHTML= "You Won"
         score=score+5;
-        print[0].innerHTML=score;
+        n=1;
+        print[0].innerHTML=score;}
     }
     
     
