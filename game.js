@@ -25,6 +25,7 @@ window.addEventListener('load', function(){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className = "boundary";}
         document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
+        document.getElementById("game").addEventListener("mouseleave", mouseEnter);
     }
     function onClick(){
         score=0;
