@@ -11,5 +11,9 @@ else if (window.attachEvent)
     window.attachEvent("onload", downloadJSAtOnload);
 else window.onload = downloadJSAtOnload;
 
-var element=document.getElementById("status");
+var boundaries=document.getElementsByClassName("boundary");
+for (var i =0 ; i< boundaries.length; i++){
+    boundaries[i].setAttribute("id","boundary"+i);
+}
+var element= document.getElementById("game");
 console.log(element);
