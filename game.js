@@ -6,7 +6,7 @@ window.addEventListener('load', function(){
     var score=0;
     var n=0;
     //var j=0
-    var time=10000
+    var time=60000
     print=document.getElementsByClassName("boundary example")
     document.getElementById("boundary0").addEventListener("mouseenter", losing);
     document.getElementById("boundary1").addEventListener("mouseenter", losing);
