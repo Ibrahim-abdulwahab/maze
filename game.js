@@ -42,6 +42,8 @@ window.addEventListener('load', function(){
     }
     function winning(){
         window.clearTimeout(mytime)
+        time=time-5000 //the more the player wins,the more the game becomes tougher. This is how I implement
+        //level system
         if (n==0){
         document.getElementById("status").innerHTML= "You Won"
         score=score+5;
