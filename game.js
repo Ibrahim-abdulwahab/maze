@@ -5,6 +5,8 @@ window.addEventListener('load', function(){
     }
     var score=0;
     var n=0;
+    //var j=0
+    var time=10000
     print=document.getElementsByClassName("boundary example")
     document.getElementById("boundary0").addEventListener("mouseenter", losing);
     document.getElementById("boundary1").addEventListener("mouseenter", losing);
@@ -20,7 +22,7 @@ window.addEventListener('load', function(){
             document.getElementById("boundary"+i).className = "boundary";}
         document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
         document.getElementById("game").addEventListener("mouseleave", losing);
-        window.setTimeout(losing,3000)
+        mytime=window.setTimeout(losing,time)
         n=0;
     }
     function onClick(){
@@ -28,6 +30,7 @@ window.addEventListener('load', function(){
         print[0].innerHTML=score;
     }
     function losing(){
+        window.clearTimeout(mytime)
         if (n==0){
         for (var i=0; i<boundaries.length-1;i++){
             document.getElementById("boundary"+i).className += " youlose";}
@@ -38,15 +41,13 @@ window.addEventListener('load', function(){
         }        
     }
     function winning(){
+        window.clearTimeout(mytime)
         if (n==0){
         document.getElementById("status").innerHTML= "You Won"
         score=score+5;
         n=1;
         print[0].innerHTML=score;}
     }
-    
-    
-    var lol= document.getElementById("game");
-    console.log(lol);
+
 })
 
