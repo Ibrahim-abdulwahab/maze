@@ -6,11 +6,15 @@ window.addEventListener('load', function(){
     var score=0;
     var n=0;
     var time=60000;
-    var user=prompt("Please enter your name","type here")
+    print=document.getElementsByClassName("boundary example")
+    var user=prompt("Please enter your name","type here");
     if (user != null) {
         document.getElementById("status").innerHTML ="Hello " + user + "! To start move your mouse to the S";
       }
-    print=document.getElementsByClassName("boundary example")
+    //if (localStorage.setItem(user,score)){
+        //print[0].innerHTML=(localStorage.setItem(user))
+    //}
+
     document.getElementById("boundary0").addEventListener("mouseenter", losing);
     document.getElementById("boundary1").addEventListener("mouseenter", losing);
     document.getElementById("boundary2").addEventListener("mouseenter", losing);
@@ -19,6 +23,7 @@ window.addEventListener('load', function(){
     document.getElementById("start").addEventListener("mouseenter", starting);
     document.getElementById("start").addEventListener("click", onClick);
     document.getElementById("end").addEventListener("mouseenter", winning);
+    //print[0].addEventListener("click",save)
 
     function starting(){
         for (var i=0; i<boundaries.length-1;i++){
@@ -30,6 +35,7 @@ window.addEventListener('load', function(){
     }
     function onClick(){
         score=0;
+        time=60000;
         print[0].innerHTML=score;
     }
     function losing(){
@@ -53,6 +59,10 @@ window.addEventListener('load', function(){
         n=1;
         print[0].innerHTML=score;}
     }
+    //function save(){
+      //  localStorage.setItem(user,score)
+    //}
+
 
 })
 
