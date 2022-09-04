@@ -20,6 +20,7 @@ window.addEventListener('load', function(){
             document.getElementById("boundary"+i).className = "boundary";}
         document.getElementById("status").innerHTML= "Begin by moving your mouse over the 'S' "
         document.getElementById("game").addEventListener("mouseleave", losing);
+        window.setTimeout(losing,3000)
         n=0;
     }
     function onClick(){
