@@ -1,7 +1,3 @@
-/*
-Game Lab CSS file
-You don't need to download or edit this file.
-*/
 
 h1, h2 {
 	text-align: center;
@@ -59,7 +55,7 @@ div.youlose {
 }
 
 /*
-Hack hack hack; these are CSS "sibling selectors" for selecting
+These are CSS "sibling selectors" for selecting
 neighboring elements.  Necessary to avoid giving ids to the boundary divs
 */
 
